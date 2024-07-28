@@ -16,7 +16,7 @@ public class LoginTest extends BaseClass {
 
 		LoginPage lp = new LoginPage();
 		lp.LoginFunction("abc@gmail.com", "Shree@123");
-		lp.validateError("The email or password you have entered is invalid");
+		lp.validateError("The email or password you have entered is invalid.");
 		System.out.println(driver.getTitle());
 		System.out.println(driver.getCurrentUrl());
 
