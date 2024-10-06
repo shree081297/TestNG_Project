@@ -29,6 +29,9 @@ public class LoginPage {
 	@FindBy(id="msg_box")
 	WebElement error ;
 	
+	@FindBy(xpath="//img[@alt='Simplilearn Logo']")
+	WebElement logo;
+	
 
 	public LoginPage() {
 		
@@ -49,5 +52,16 @@ public class LoginPage {
 	public void validateError(String ExpectedMess) {
 		String actualMess=error.getText();
 		Assert.assertEquals(actualMess, ExpectedMess);
+	}
+	public String validateTitle() {
+		//String ActualTitle=driver.getTitle();
+		//Assert.assertEquals(ActualTitle, ExpTitle);
+		return driver.getTitle();
+		
+	}
+	public boolean validatelogo() {
+	
+		return logo.isDisplayed();
+		
 	}
 }

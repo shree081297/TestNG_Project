@@ -5,8 +5,8 @@
     <classes>
       <class name="TestCases.LoginTest">
         <methods>
+          <include name="Tc_005"/>
           <include name="tearDown"/>
-          <include name="LoginFailureTest"/>
           <include name="setUpDriver"/>
         </methods>
       </class> <!-- TestCases.LoginTest -->
