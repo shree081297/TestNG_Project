@@ -23,8 +23,7 @@ public class LoginTest extends BaseClass {
 
 	@Test(groups= {"sanity"},description="Login failure test")
 	public void LoginFailureTest() {
-
-		LoginPage lp = new LoginPage();
+		LoginPage lp = new LoginPage(GetDriver());
 		lp.LoginFunction("abc@gmail.com", "Shree@123");
 
 		String ActualTitle = lp.validateTitle();
@@ -34,7 +33,7 @@ public class LoginTest extends BaseClass {
 
 	@Test(groups= {"sanity","regression"}, description="Login sucess test")
 	public void Tc_02LoginSucessTest() {
-		LoginPage lp = new LoginPage();
+		LoginPage lp = new LoginPage(GetDriver());
 		lp.LoginFunction("srikanthkurella01@gmail.com", "Shree@123");
 		String ActualTitle = lp.validateTitle();
 		Assert.assertEquals(ActualTitle, "Learning on Simplilearn");
@@ -43,17 +42,17 @@ public class LoginTest extends BaseClass {
 	@Test
 	@Parameters({ "param1", "param2" })
 	public void Tc_03LoginSucessTest(String uname, String pwd) {
-		LoginPage lp = new LoginPage();
+		LoginPage lp = new LoginPage(GetDriver());
 		lp.LoginFunction(uname, pwd);
 	}
 
 	
 	Map<String, String> testdata = new HashMap<String, String>();
 
-	@Test(dataProvider = "dp")
+	@Test(dataProvider = "dp",groups= {"sanity","regression"}, description="Login sucess dataprovider test")
 	public void TC04_LoginSuccessTest(String key) {
 
-		LoginPage lp = new LoginPage();
+		LoginPage lp = new LoginPage(GetDriver());
 		lp.LoginFunction(key, testdata.get(key));
 	}
 

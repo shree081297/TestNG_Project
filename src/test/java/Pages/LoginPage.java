@@ -10,6 +10,8 @@ import TestCases.BaseClass;
 import junit.framework.Assert;
 
 public class LoginPage {
+	WebDriver driver;
+
 	
 	@FindBy(className="login")
 	WebElement loginlink;
@@ -32,13 +34,13 @@ public class LoginPage {
 	@FindBy(xpath="//img[@alt='Simplilearn Logo']")
 	WebElement logo;
 	
-
-	public LoginPage() {
+public LoginPage(WebDriver driver) {
 		
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+	
 
-	WebDriver driver = BaseClass.driver;
 
 	public void LoginFunction(String UserName, String Password) {
 

@@ -5,9 +5,11 @@
     <classes>
       <class name="TestCases.LoginTest">
         <methods>
-          <include name="Tc_005"/>
-          <include name="tearDown"/>
-          <include name="setUpDriver"/>
+          <include name="TC04_LoginSuccessTest"/>
+          <include name="CloseExcel"/>
+          <include name="TearDown"/>
+          <include name="SetUpDriver"/>
+          <include name="SetUpData"/>
         </methods>
       </class> <!-- TestCases.LoginTest -->
     </classes>
